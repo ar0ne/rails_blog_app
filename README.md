@@ -22,8 +22,16 @@ If everything is all right, then clone this repository:
 
 `
 $ git clone git@github.com:ar0ne/rails_blog_app.git
-cd rails_blog_app
 `
+
+`
+$ cd rails_blog_app
+`
+
+`
+$ bundle install
+`
+
 
 And run server:
 
