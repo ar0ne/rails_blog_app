@@ -1,6 +1,6 @@
 # Introducing
 
-This's simple blog application written on Ruby on Rails. Just CRUD for user and article entity.
+This's proof-of-concept blog application written on Ruby on Rails 5. Here we have CRUD for user and article entities. I used sqlite which is default database for RoR, but if you need it, you can always migrate to another database.
 
 ## How to install
 
@@ -27,7 +27,8 @@ And run server:
 $ rails server
 `
 
-After that you could open browser on [http://localhost:3000](http://localhost:3000)
+After that you could open your favorite browser on the next page:  [http://localhost:3000](http://localhost:3000)
+
 
 
 ## API
@@ -52,4 +53,8 @@ edit_article GET    /articles/:id/edit(.:format) articles#edit
              PUT    /users/:id(.:format)         users#update
              DELETE /users/:id(.:format)         users#destroy
         root GET    /                            articles#index
-<pre>
+</pre>
+
+## TODO:
+  * fix tests (`$ rake test`)
+  * improve styles
