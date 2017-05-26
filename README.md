@@ -7,9 +7,13 @@ This's proof-of-concept blog application written on Ruby on Rails 5. Here we hav
 You can install RoR from this [guide](http://installrails.com/steps/choose_os)
 
 Then check:
+
 `
 $ ruby -v
 ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin16]
+`
+
+`
 $ rails --version
 Rails 5.1.1
 `
