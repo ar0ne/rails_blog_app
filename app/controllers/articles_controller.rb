@@ -10,6 +10,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    article_views = ArticleView.find_by(article_id: @article.id)
+    article_views.increment(:count).count
+    article_views.save
+    @count = article_views.count
   end
 
   # GET /articles/new
@@ -28,6 +32,10 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        views_counter = ArticleView.new
+        views_counter.article_id = @article.id
+        views_counter.count = 0
+        views_counter.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else

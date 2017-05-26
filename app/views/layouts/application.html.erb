@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <nav id="navbar">
+
+      <p>
+        <%= link_to 'Home', { :controller => 'articles', :action => 'index' } %>
+        <%= link_to 'Users', { :controller => 'users', :action => 'index' } %>
+        <%= link_to 'Add new blog', { :controller => 'articles', :action => 'new' } %>
+      </p>
+
+    </nav>
+
     <%= yield %>
   </body>
 </html>
