@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form-horizontal col-md-8">
+  <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title, id: :article_title %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :post %>
     <%= form.text_area :post, id: :article_post %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :user_id %>
     <%= form.collection_select :user_id, User.all, :id, :username %>
   </div>
@@ -29,4 +30,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>

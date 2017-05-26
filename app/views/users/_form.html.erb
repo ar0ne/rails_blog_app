@@ -11,23 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form-horizontal col-md-8">
+  <div class="form-group">
     <%= form.label :username %>
     <%= form.text_field :username, id: :user_username %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
     <%= form.text_field :email, id: :user_email %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :password %>
     <%= form.text_field :password, id: :user_password %>
   </div>
 
-
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
+
 <% end %>

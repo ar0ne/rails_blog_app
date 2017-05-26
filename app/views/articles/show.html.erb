@@ -1,26 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="row article__div">
+  <div class="col-md-12">
+    <h1>
+      <%= @article.title %>
+    </h1>
+  </div>
 
-<p>
-  <strong>Written by:</strong>
-  <%= @article.user.username %>
-</p>
+  <div class="col-md-12">
+    <strong>Written by:</strong>
+    <%= @article.user.username %>
+  </div>
+  <br/>
 
-<p>
-  <strong>Post:</strong>
-  <%= @article.post %>
-</p>
+  <blockquote>
+    <p>
+    <%= @article.post %>
+    </p>
+  </blockquote>
+  <br/>
 
-<p>
-  <strong>Viewed <%# @article.article_views.count %></strong>
-  <%= @count %>
-</p>
+  <div>
+    <small>Viewed <b><%= @count %></b> times</small>
+  </div>
 
+</div>
 
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<div class="row">
+  <div class="btn btn-warning" type="button">
+    <%= link_to 'Edit', edit_article_path(@article) %>
+  </div>
+  <div class="btn btn-info" type="button">
+    <%= link_to 'Back', articles_path %>
+  </div>
+</div>

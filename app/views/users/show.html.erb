@@ -1,20 +1,49 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Password:</strong>
+    <%= @user.password %>
+  </p>
+</div>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <td><b>Articles</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @user.articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td>
+            <div class="btn btn-info">
+              <%= link_to 'Show', article %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="btn btn-warning" type="button">
+    <%= link_to 'Edit', edit_user_path(@user) %>
+  </div>
+  <div class="btn btn-info" type="button">
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>

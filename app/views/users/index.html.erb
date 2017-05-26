@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<table>
+<table class="table table-condensed table-hover">
   <thead>
     <tr>
       <th>Id</th>
@@ -20,18 +20,21 @@
         <td><%= user.username %></td>
         <td><%= user.password %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <tr>
-        <td><b>Articles</b></td>
-      </tr>
-      <tr>
-        <% user.articles.each do |article| %>
-          <td><%= article.title %></td>
-          <td><%= link_to 'Show', article %></td>
-        <% end %>
+        <td>
+          <div class="btn btn-info">
+            <%= link_to 'Show', user %>
+          </div>
+        </td>
+        <td>
+          <div class="btn btn-warning">
+            <%= link_to 'Edit', edit_user_path(user) %>
+          </div>
+          </td>
+        <td>
+          <div class="btn btn-danger">
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -39,4 +42,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<div class="btn btn-success">
+  <%= link_to 'New User', new_user_path %>
+</div>

@@ -2,23 +2,37 @@
 <html>
   <head>
     <title>RailsBlogApp</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
   </head>
 
   <body>
-    <nav id="navbar">
-
-      <p>
-        <%= link_to 'Home', { :controller => 'articles', :action => 'index' } %>
-        <%= link_to 'Users', { :controller => 'users', :action => 'index' } %>
-        <%= link_to 'Add new blog', { :controller => 'articles', :action => 'new' } %>
-      </p>
+    <nav class="navbar navbar-default">
+      <a class="navbar-brand" href="#">BlogApp</a>
+      <div class="collapse navbar-collapse">
+        <ul class='nav navbar-nav'>
+          <li>
+          <%= link_to 'Home', { :controller => 'articles', :action => 'index' } %>
+        </li>
+        <li>
+          <%= link_to 'All users', { :controller => 'users', :action => 'index' } %>
+        </li>
+        <li>
+          <%= link_to 'Add new article', { :controller => 'articles', :action => 'new' } %>
+        </li>
+      </div>
 
     </nav>
 
-    <%= yield %>
+    <div id="main_container" class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,3 +1,13 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.btn a {
+  color: white;
+}
+
+.article__div {
+  background-color: #e7e7e7;
+  border-radius: .2em;
+  padding: 1em;
+  margin: 1em 1em 1em 0;
+}
