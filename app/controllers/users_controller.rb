@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before User was created we disable next actions
+  # before User was created we disable next list of actions
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
