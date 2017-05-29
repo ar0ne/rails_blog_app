@@ -10,10 +10,14 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @username = (@article.user.present?) ? @article.user.username : nil
+
     article_views = ArticleView.find_by(article_id: @article.id)
-    article_views.increment(:count).count
-    article_views.save
-    @count = article_views.count
+    if article_views
+      article_views.increment(:count).count
+      article_views.save
+      @count = article_views.count
+    end
   end
 
   # GET /articles/new

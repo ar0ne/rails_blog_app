@@ -9,7 +9,7 @@
 
   <div class="col-md-12">
     <strong>Written by:</strong>
-    <%= @article.user.username %>
+    <%= @username || "Unknown" %>
   </div>
   <br/>
 
@@ -20,17 +20,15 @@
   </blockquote>
   <br/>
 
-  <div>
-    <small>Viewed <b><%= @count %></b> times</small>
-  </div>
+  <% if @article %>
+    <div>
+      <small>Viewed <b><%= @count %></b> times</small>
+    </div>
+  <% end %>
 
 </div>
 
 <div class="row">
-  <div class="btn btn-warning" type="button">
-    <%= link_to 'Edit', edit_article_path(@article) %>
-  </div>
-  <div class="btn btn-info" type="button">
-    <%= link_to 'Back', articles_path %>
-  </div>
+    <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-warning" %>
+    <%= link_to 'Back', articles_path, class: "btn btn-info"  %>
 </div>

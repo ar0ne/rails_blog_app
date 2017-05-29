@@ -68,5 +68,5 @@ edit_article GET    /articles/:id/edit(.:format) articles#edit
 </pre>
 
 ## TODO:
-  * fix tests (`$ rake test`)
   * improve styles
+  * try to use Bootstrap gem instead of CDN link

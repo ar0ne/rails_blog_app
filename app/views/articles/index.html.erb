@@ -7,11 +7,14 @@
     <div class="article__div">
       <p><b>Title: </b><%= article.title %></p>
       <p><b>Post: </b><%= article.post[0, 200] %>...<%= link_to 'read more', article %></p>
-      <p><b>Author: </b><%= User.find(article.user_id).username %></p>
+      <%# TODO: How to move this logic to controller ? %>
+      <% user = User.find_by(id: article.user_id) %>
+      <% username = user ? user.username : 'Unknown' %>
+      <p><b>Author: </b><%= username %></p>
       <p>
-        <div type="button" class="btn btn-info"><%= link_to 'Show', article %></div>
-        <div type="button" class="btn btn-warning"><%= link_to 'Edit', edit_article_path(article) %></div>
-        <div type="button" class="btn btn-danger"><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <%= link_to 'Show', article, class: "btn btn-info" %>
+          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
       </p>
     </div>
   <% end %>

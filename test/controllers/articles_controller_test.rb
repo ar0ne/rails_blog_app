@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @article = articles(:one)
+    @user = User.create(username: "john", email: "john@example.com", password: "pass")
+    @article = Article.create(title: "Tile", post: "Text", user_id: @user.id)
   end
 
   test "should get index" do
